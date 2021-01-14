@@ -184,7 +184,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      6.2k 字
+      6.1k 字
     </span>
   
 
@@ -194,7 +194,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      75
+      74
        分钟
     </span>
   
@@ -568,13 +568,6 @@
 <p>以PA 2.3为例：</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-function"><span class="hljs-keyword">asm</span> <span class="hljs-title">volatile</span> <span class="hljs-params">(<span class="hljs-string">&quot;inl %1, %0&quot;</span> : <span class="hljs-string">&quot;=a&quot;</span>(data) : <span class="hljs-string">&quot;d&quot;</span>((<span class="hljs-keyword">uint16_t</span>)port))</span></span>;<br></code></pre></td></tr></table></figure>
 <p>Instruction List是inl %1, %0 ，其中%1指代”d”((uint16_t)port)也就是dx，%0指代”=a”(data)也就是eax，最后输入的来源是port变量，输出的值保存在了data中。</p>
-<h2 id="部分测试结果"><a href="#部分测试结果" class="headerlink" title="部分测试结果"></a>部分测试结果</h2><p><strong>一键回归测试结果：</strong></p>
-<p><img src="/Users/hustrength/Desktop/Screen Shot 2021-01-14 at 21.25.29.png" srcset="/img/loading.gif" alt="Screen Shot 2021-01-14 at 21.25.29" style="zoom: 33%;" align="left" /></p>
-<p><strong>microbranch测试结果：</strong></p>
-<p><em>注：CPU为单核 Intel Core i5@2.4 GHz</em></p>
-<p><img src="/Users/hustrength/Desktop/Screen Shot 2021-01-14 at 17.04.24.png" srcset="/img/loading.gif" alt="Screen Shot 2021-01-14 at 17.04.24" style="zoom:33%;" align="left" /></p>
-<p><strong>typing游戏测试结果：</strong></p>
-<p><img src="/Users/hustrength/Desktop/Screen Shot 2021-01-14 at 21.29.30.png" srcset="/img/loading.gif" alt="Screen Shot 2021-01-14 at 21.29.30" style="zoom:20%;" align="left"/></p>
 <h2 id="必答题-1"><a href="#必答题-1" class="headerlink" title="必答题"></a>必答题</h2><ul>
 <li><p>RTFSC 请整理一条指令在NEMU中的执行过程</p>
 <ul>
@@ -685,12 +678,6 @@
 <li>将<code>[p_vaddr+p_filesz, p_vaddr+p_memsz)</code>区间对应的物理区间清零。</li>
 </ol>
 <h2 id="PA-3-3"><a href="#PA-3-3" class="headerlink" title="PA 3.3"></a>PA 3.3</h2><p>PA 3.3实现一个简易的文件系统，需要实现<code>fs_open()</code>，<code>fs_close()</code>，<code>fs_read()</code>，<code>fs_write()</code>，<code>fs_lseek()</code>函数；还需要将设备(<code>串口</code>，<code>键盘</code>，<code>时钟</code>，<code>VGA</code>)抽象为文件，实现设备文件的读写操作。该过程较为简单，PA手册指导步骤也很详尽，就不在此赘述。</p>
-<h2 id="仙剑奇侠传测试结果"><a href="#仙剑奇侠传测试结果" class="headerlink" title="仙剑奇侠传测试结果"></a>仙剑奇侠传测试结果</h2><p><strong><code>Nanos-lite</code>加载<code>/bin/init</code>程序，进入程序选择界面：</strong></p>
-<p><img src="/Users/hustrength/Desktop/Screen Shot 2021-01-14 at 22.41.05.png" srcset="/img/loading.gif" alt="Screen Shot 2021-01-14 at 22.41.05" style="zoom:30%;" align="left" /></p>
-<p><strong>运行仙剑奇侠传，并开始新的游戏：</strong></p>
-<p><img src="/Users/hustrength/Desktop/Screen Shot 2021-01-14 at 22.43.28.png" srcset="/img/loading.gif" alt="Screen Shot 2021-01-14 at 22.43.28" style="zoom:30%;" align="left"/></p>
-<p><strong>仙剑奇侠传进行读档：</strong></p>
-<p><img src="/Users/hustrength/Desktop/Screen Shot 2021-01-14 at 22.50.31.png" srcset="/img/loading.gif" alt="Screen Shot 2021-01-14 at 22.48.35" style="zoom:30%;" align="left"/></p>
 <h2 id="必答题-2"><a href="#必答题-2" class="headerlink" title="必答题"></a>必答题</h2><ul>
 <li><p>理解上下文结构体的前世今生 (见PA3.1阶段)</p>
 <ul>
